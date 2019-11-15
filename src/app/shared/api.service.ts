@@ -16,7 +16,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   // Add player
-  AddStudent(data: Player): Observable<any> {
+  AddPlayer(data: Player): Observable<any> {
     let API_URL = `${this.endpoint}/add-player`;
     return this.http.post(API_URL, data)
       .pipe(
@@ -25,7 +25,7 @@ export class ApiService {
   }
 
   // Get all players
-  GetStudents() {
+  GetPlayers() {
     return this.http.get(`${this.endpoint}`);
   }
 

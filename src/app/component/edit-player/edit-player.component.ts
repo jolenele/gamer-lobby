@@ -1,9 +1,9 @@
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit, ViewChild, NgZone } from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
-import { MatChipInputEvent } from '@angular/material';
+// import { MatChipInputEvent } from '@angular/material';
 import { ApiService } from './../../shared/api.service';
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 export interface Subject {
   name: string;
@@ -26,7 +26,7 @@ export class EditPlayerComponent implements OnInit {
   subjectArray: Subject[] = [];
 
   ngOnInit() {
-    this.updateForm();
+    // this.updateForm();
   }
 
   constructor(
@@ -36,9 +36,9 @@ export class EditPlayerComponent implements OnInit {
     private actRoute: ActivatedRoute,
     private playerApi: ApiService
   ) {
-    var id = this.actRoute.snapshot.paramMap.get('id');
+    let id = this.actRoute.snapshot.paramMap.get('id');
     this.playerApi.GetPlayer(id).subscribe(data => {
-      console.log(data.subjects)
+      console.log(data.subjects),
       this.subjectArray = data.subjects;
       this.playerForm = this.fb.group({
         player_name: [data.player_name, [Validators.required]],
@@ -47,8 +47,9 @@ export class EditPlayerComponent implements OnInit {
         time: [data.time],
         favourite_game: [data.favourite_game, [Validators.required]],
         status: [data.status]
-      })
-    })
+      });
+    });
   }
-  //Dustin: configure update feature here
+
+  // Dustin: configure update feature here
 }
