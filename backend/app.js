@@ -5,6 +5,7 @@ let express = require('express'),
   bodyParser = require('body-parser'),
   dataBaseConfig = require('./database/db');
 
+
 // Connecting mongoDB
 mongoose.Promise = global.Promise;
 mongoose.connect(dataBaseConfig.db, {
