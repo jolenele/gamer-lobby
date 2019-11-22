@@ -4,7 +4,7 @@
     <h1 class="mat-h1">Add Player</h1>
     <mat-divider fxFlex="1 0"></mat-divider>
   </div>
-  
+
   <!-- Form -->
   <div class="inner-wrapper">
     <form [formGroup]="playerForm" (ngSubmit)="submitPlayerForm()" #resetPlayerForm="ngForm" novalidate>
@@ -18,7 +18,7 @@
               You must provide a<strong>player name</strong>
             </mat-error>
           </mat-form-field>
-  
+
           <!-- Rank -->
           <mat-form-field class="example-full-width">
             <input matInput placeholder="Player rank" formControlName="player_rank">
@@ -34,10 +34,10 @@
               You must provide a<strong>player score</strong>
             </mat-error>
           </mat-form-field>
-  
+
         </div>
       </mat-card>
-  
+
       <!-- Right block -->
       <mat-card>
         <div class="controlers-wrapper">
@@ -59,7 +59,7 @@
               You must provide a<strong>player favorite game</strong>
             </mat-error>
           </mat-form-field>
-  
+
           <!-- Status -->
           <mat-form-field class="example-full-width">
             <input matInput placeholder="Player status" formControlName="player_status">
@@ -69,7 +69,7 @@
           </mat-form-field>
         </div>
       </mat-card>
-  
+
       <!-- Submit & Reset -->
       <mat-card>
         <div class="full-wrapper button-wrapper">

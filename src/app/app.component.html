@@ -1,28 +1,15 @@
 <mat-toolbar color="primary" class="header">
-<<<<<<< HEAD
-  <div>Gamer Lobby</div>
-  <div>
-    <p>Login</p>
-=======
   <div>
     <div>Gamer Lobby</div>
     <div>
       <button mat-raised-button color="warn">Login</button>
     </div>
->>>>>>> parent of 7353973... Revert "modify add function"
   </div>
 </mat-toolbar>
 
 <mat-sidenav-container>
   <mat-sidenav-content>
     <div>
-<<<<<<< HEAD
-      <a routerLink="/player-ranking">Player Ranking</a>
-      <a routerLInk="/admin-login">Admin</a>
-    </div>
-    
-    <router-outlet></router-outlet>
-=======
       <a mat-raised-button routerLink="/player-list">Player Ranking</a>
       <a mat-raised-button routerLink="/add-player">Add Player</a>
     </div>
@@ -30,13 +17,12 @@
     <div>
       <router-outlet></router-outlet>
     </div>
->>>>>>> parent of 7353973... Revert "modify add function"
   </mat-sidenav-content>
 </mat-sidenav-container>
 
 
-<!-- 
-Toolbar 
+<!--
+Toolbar
 <mat-toolbar color="primary" class="header">
   <div>Student Records</div>
   <span class="nav-tool-items">
@@ -45,7 +31,7 @@ Toolbar
 </mat-toolbar>
 
 <mat-sidenav-container>
-  Sidenav 
+  Sidenav
   <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
     [fixedTopGap]>
     <mat-nav-list>
@@ -58,7 +44,7 @@ Toolbar
     </mat-nav-list>
   </mat-sidenav>
 
-  Main content 
+  Main content
   <mat-sidenav-content>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
