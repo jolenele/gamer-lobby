@@ -3,9 +3,9 @@ const app = express();
 const playerRoute = express.Router();
 
 // Player model
-let Player = require('../model/Player');
+let Player = require('../database/model/Player');
 
-// Add Student
+// Add Player
 playerRoute.route('/add-player').post((req, res, next) => {
   Player.create(req.body, (error, data) => {
     if (error) {
