@@ -2,8 +2,8 @@ import { Component, OnInit, ViewChild, NgZone } from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material';
 import { ApiService } from './../../shared/api.service';
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { RouterModule, Routes, Router } from '@angular/router'
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { RouterModule, Routes, Router } from '@angular/router';
 
 export interface Subject {
   name: string;
@@ -54,7 +54,7 @@ export class AddPlayerComponent implements OnInit {
     const value = event.value;
     // Add language
     if ((value || '').trim() && this.subjectArray.length < 5) {
-      this.subjectArray.push({ name: value.trim() })
+      this.subjectArray.push({ name: value.trim() });
     }
     // Reset the input value
     if (input) {
@@ -75,7 +75,7 @@ export class AddPlayerComponent implements OnInit {
     var convertDate = new Date(e.target.value).toISOString().substring(0, 10);
     this.playerForm.get('dob').setValue(convertDate, {
       onlyself: true
-    })
+    });
   }
 
   /* Get errors */
@@ -87,7 +87,7 @@ export class AddPlayerComponent implements OnInit {
   submitPlayerForm() {
     if (this.playerForm.valid) {
       this.playerApi.AddPlayer(this.playerForm.value).subscribe(res => {
-        this.ngZone.run(() => this.router.navigateByUrl('/players-list'))
+        this.ngZone.run(() => this.router.navigateByUrl('/players-list'));
       });
     }
   }
