@@ -1,19 +1,17 @@
-<mat-toolbar color="primary" class="header" style="border: 5px solid red">
+<mat-toolbar color="primary" class="header">
+  <div>Gamer Lobby</div>
   <div>
-    <div>Gamer Lobby</div>
-    <div class="float-right">
-      <button mat-raised-button color="warn">Login</button>
-    </div>
+    <p>Login</p>
   </div>
 </mat-toolbar>
 
 <mat-sidenav-container>
   <mat-sidenav-content>
-    <div style="align-items: center">
-      <a mat-raised-button routerLink="/player-list">Player Ranking</a>
-      <a mat-raised-button routerLink="/add-player">Add Player</a>
+    <div>
+      <a routerLink="/player-ranking">Player Ranking</a>
+      <a routerLInk="/admin-login">Admin</a>
     </div>
-
+    
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -13,7 +13,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PlayerRankingComponent } from './player-ranking/player-ranking.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCardModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -31,8 +30,7 @@ import { MatCardModule } from '@angular/material';
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
-    AngularMaterialModule,
-    MatCardModule
+    AngularMaterialModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
