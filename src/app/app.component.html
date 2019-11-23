@@ -1,28 +1,24 @@
 <mat-toolbar color="primary" class="header">
+  <div>Gamer Lobby</div>
   <div>
-    <div>Gamer Lobby</div>
-    <div>
-      <button mat-raised-button color="warn">Login</button>
-    </div>
+    <button mat-raised-button color="warn">Login</button>
   </div>
 </mat-toolbar>
 
 <mat-sidenav-container>
   <mat-sidenav-content>
     <div>
-      <a mat-raised-button routerLink="/player-list">Player Ranking</a>
-      <a mat-raised-button routerLink="/add-player">Add Player</a>
+      <a mat-flat-button color="accent" routerLinkActive="mat-warn" routerLink="/player-list">Player Ranking</a>
+      <a mat-flat-button color="accent" routerLinkActive="mat-warn" routerLink="/add-player">Add Player</a>
     </div>
-
-    <div>
-      <router-outlet></router-outlet>
-    </div>
+    
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
 
 
-<!--
-Toolbar
+<!-- 
+Toolbar 
 <mat-toolbar color="primary" class="header">
   <div>Student Records</div>
   <span class="nav-tool-items">
@@ -31,7 +27,7 @@ Toolbar
 </mat-toolbar>
 
 <mat-sidenav-container>
-  Sidenav
+  Sidenav 
   <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
     [fixedTopGap]>
     <mat-nav-list>
@@ -44,7 +40,7 @@ Toolbar
     </mat-nav-list>
   </mat-sidenav>
 
-  Main content
+  Main content 
   <mat-sidenav-content>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
