@@ -10,10 +10,9 @@ import { EditPlayerComponent } from './component/edit-player/edit-player.compone
 import { PlayerListComponent } from './component/player-list/player-list.component';
 import { ApiService } from './shared/api.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PlayerRankingComponent } from './player-ranking/player-ranking.component';
-import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material';
+import { LoginComponent } from './component/login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +20,7 @@ import { MatCardModule } from '@angular/material';
     AddPlayerComponent,
     EditPlayerComponent,
     PlayerListComponent,
-    PlayerRankingComponent,
-    AdminLoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
