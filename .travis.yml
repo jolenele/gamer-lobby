@@ -1,21 +1,23 @@
+dist: trusty
+sudo: false
+
 language: node_js
 node_js:
-  - 10.9.0
+  - '8'
 
-cache: npm
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 
-before_install:
-  - "npm config set spin false"
-  - npm i -g now
+cache:
+  directories:
+    - ./node_modules
 
 install:
   - npm install
 
 script:
-  - npm run build
-  - npm run test
-
-deploy:
-  provider: script
-  script: bash scripts/deploy.sh
-  skip_cleanup: true
+  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
