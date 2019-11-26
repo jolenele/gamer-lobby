@@ -39,12 +39,12 @@ export class AddPlayerComponent implements OnInit {
   /* Reactive add form */
   submitAddForm() {
     this.playerForm = this.fb.group({
-      name: ['', [Validators.required]],
-      rank: ['', [Validators.required]],
-      score: ['', [Validators.required]],
-      time: ['', [Validators.required]],
-      favourite_game: [this.subjectArray],
-      status: [this.subjectArray]
+      player_name: ['', [Validators.required]],
+      player_rank: ['', [Validators.required]],
+      player_score: ['', [Validators.required]],
+      dob: ['', [Validators.required]],
+      player_favorite_game: [this.subjectArray],
+      player_status: [this.subjectArray]
     });
   }
 
@@ -85,9 +85,12 @@ export class AddPlayerComponent implements OnInit {
 
   /* Submit book */
   submitPlayerForm() {
+    console.log(this.playerForm.valid);
+    console.log(this.playerForm.value);
     if (this.playerForm.valid) {
       this.playerApi.AddPlayer(this.playerForm.value).subscribe(res => {
-        this.ngZone.run(() => this.router.navigateByUrl('/players-list'))
+        // this.ngZone.run(() => this.router.navigateByUrl('/players-list'))
+        this.router.navigateByUrl('/players-list')
       });
     }
   }

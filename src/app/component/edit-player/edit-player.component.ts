@@ -42,11 +42,11 @@ export class EditPlayerComponent implements OnInit {
       this.subjectArray = data.subjects;
       this.playerForm = this.fb.group({
         player_name: [data.player_name, [Validators.required]],
-        rank: [data.rank, [Validators.required]],
-        score: [data.score, [Validators.required]],
-        time: [data.time],
-        favourite_game: [data.favourite_game, [Validators.required]],
-        status: [data.status]
+        player_rank: [data.rank, [Validators.required]],
+        player_score: [data.score, [Validators.required]],
+        dob: [data.time],
+        player_favorite_game: [data.favourite_game, [Validators.required]],
+        player_status: [data.status]
       });
     });
   }

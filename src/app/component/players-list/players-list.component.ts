@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { Player } from './../../shared/player';
-import { ApiService } from './../../shared/api.service';
+import { Player } from '../../shared/player';
+import { ApiService } from '../../shared/api.service';
 import { ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 
 @Component({
-  selector: 'app-player-list',
-  templateUrl: './player-list.component.html',
-  styleUrls: ['./player-list.component.css']
+  selector: 'app-players-list',
+  templateUrl: './players-list.component.html',
+  styleUrls: ['./players-list.component.css']
 })
 
 export class PlayerListComponent implements OnInit {
   PlayerData: any = [];
   dataSource: MatTableDataSource<Player>;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-  displayedColumns: string[] = ['_id', 'player_name', 'rank', 'score', 'time', 'favorite_game', 'status`'];
+  displayedColumns: string[] = ['_id', 'player_name', 'rank', 'score', 'time', 'favorite_game', 'status'];
 
   constructor(private playerApi: ApiService) {
     this.playerApi.GetPlayers().subscribe(data => {
