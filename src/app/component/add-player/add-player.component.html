@@ -21,16 +21,16 @@
 
           <!-- Rank -->
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Player rank" formControlName="player_rank">
-            <mat-error *ngIf="handleError('player_rank', 'required')">
+            <input matInput placeholder="Player rank" formControlName="rank">
+            <mat-error *ngIf="handleError('rank', 'required')">
               You must provide a<strong>player rank</strong>
             </mat-error>
           </mat-form-field>
 
           <!-- Score -->
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Player score" formControlName="player_score">
-            <mat-error *ngIf="handleError('player_score', 'required')">
+            <input matInput placeholder="Player score" formControlName="score">
+            <mat-error *ngIf="handleError('score', 'required')">
               You must provide a<strong>player score</strong>
             </mat-error>
           </mat-form-field>
@@ -43,27 +43,27 @@
         <div class="controlers-wrapper">
           <!-- Time -->
           <mat-form-field>
-            <input matInput readonly [matDatepicker]="picker" placeholder="Time" formControlName="dob"
+            <input matInput readonly [matDatepicker]="picker" placeholder="Time" formControlName="time"
               (dateChange)="formatDate($event)">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
-            <mat-error *ngIf="handleError('dob', 'required')">
+            <mat-error *ngIf="handleError('time', 'required')">
               Time is required
             </mat-error>
           </mat-form-field>
 
           <!-- Favorite game -->
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Player favorite game" formControlName="player_favorite_game">
-            <mat-error *ngIf="handleError('player_favorite_game', 'required')">
+            <input matInput placeholder="Player favorite game" formControlName="favorite_game">
+            <mat-error *ngIf="handleError('favorite_game', 'required')">
               You must provide a<strong>player favorite game</strong>
             </mat-error>
           </mat-form-field>
 
           <!-- Status -->
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Player status" formControlName="player_status">
-            <mat-error *ngIf="handleError('player_status', 'required')">
+            <input matInput placeholder="Player status" formControlName="status">
+            <mat-error *ngIf="handleError('status', 'required')">
               You must provide a<strong>player status</strong>
             </mat-error>
           </mat-form-field>

@@ -40,11 +40,11 @@ export class AddPlayerComponent implements OnInit {
   submitAddForm() {
     this.playerForm = this.fb.group({
       player_name: ['', [Validators.required]],
-      player_rank: ['', [Validators.required]],
-      player_score: ['', [Validators.required]],
-      dob: ['', [Validators.required]],
-      player_favorite_game: [this.subjectArray],
-      player_status: [this.subjectArray]
+      rank: ['', [Validators.required]],
+      score: ['', [Validators.required]],
+      time: ['', [Validators.required]],
+      favorite_game: ['', [Validators.required]],
+      status: ['', [Validators.required]],
     });
   }
 
@@ -73,7 +73,7 @@ export class AddPlayerComponent implements OnInit {
   /* Date */
   formatDate(e) {
     var convertDate = new Date(e.target.value).toISOString().substring(0, 10);
-    this.playerForm.get('dob').setValue(convertDate, {
+    this.playerForm.get('time').setValue(convertDate, {
       onlyself: true
     })
   }
@@ -89,7 +89,7 @@ export class AddPlayerComponent implements OnInit {
     console.log(this.playerForm.value);
     if (this.playerForm.valid) {
       this.playerApi.AddPlayer(this.playerForm.value).subscribe(res => {
-        // this.ngZone.run(() => this.router.navigateByUrl('/players-list'))
+        this.ngZone.run(() => this.router.navigateByUrl('/players-list'))
         this.router.navigateByUrl('/players-list')
       });
     }
