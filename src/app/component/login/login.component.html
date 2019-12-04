@@ -1,1 +1,27 @@
-<p>login works!</p>
+<div class="inner-wrapper">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-card>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Username" formControlName="username">
+                <mat-error *ngIf="handlerError('username','required')">
+                    You must provide a <strong>username</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Password" type="password" formControlName="password">
+                    <mat-error *ngIf="handlerError('password','required')">
+                        You must provide a <strong>password</strong>
+                    </mat-error>
+                </mat-form-field>
+        </mat-card>
+
+        <mat-card>
+            <div class="full-wrapper button-wrapper">
+                <div class="button-wrapper">
+                    <button mat-flat-button color="warn">Login</button>
+                </div>
+            </div>
+        </mat-card>
+    </form>
+</div>
