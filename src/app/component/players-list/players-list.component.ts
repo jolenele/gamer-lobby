@@ -16,6 +16,10 @@ export class PlayerListComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   displayedColumns: string[] = ['_id', 'player_name', 'rank', 'score', 'time', 'favorite_game', 'status'];
 
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
   constructor(private playerApi: ApiService) {
     this.playerApi.GetPlayers().subscribe(data => {
       this.PlayerData = data;
