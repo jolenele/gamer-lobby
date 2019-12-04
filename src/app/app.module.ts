@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material';
 import { LoginComponent } from './component/login/login.component';
+import { GameListComponent } from './component/game-list/game-list.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { LoginComponent } from './component/login/login.component';
     EditPlayerComponent,
     PlayerListComponent,
     LoginComponent,
+    GameListComponent,
   ],
   imports: [
     BrowserModule,

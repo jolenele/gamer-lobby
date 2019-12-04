@@ -5,6 +5,9 @@ const playerRoute = express.Router();
 // Player model
 let Player = require('../database/model/Player');
 
+//Game model
+let Game = require('../database/model/Game');
+
 // Add Player
 playerRoute.route('/add-player').post((req, res, next) => {
   Player.create(req.body, (error, data) => {
@@ -19,6 +22,17 @@ playerRoute.route('/add-player').post((req, res, next) => {
 // Get all player
 playerRoute.route('/').get((req, res) => {
   Player.find((error, data) => {
+    if (error) {
+      return next(error)
+    } else {
+      res.json(data)
+    }
+  })
+})
+
+// Get all games
+playerRoute.route('/get-games').get((req, res) => {
+  Game.find((error, data) => {
     if (error) {
       return next(error)
     } else {

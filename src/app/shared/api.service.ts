@@ -29,6 +29,11 @@ export class ApiService {
     return this.http.get(`${this.endpoint}`);
   }
 
+  // Get all games
+  GetGames() {
+    return this.http.get(`${this.endpoint}/get-games`);
+  }
+
   // Get player
   GetPlayer(id): Observable<any> {
     let API_URL = `${this.endpoint}/read-player/${id}`;
@@ -69,4 +74,5 @@ export class ApiService {
     console.log(errorMessage);
     return throwError(errorMessage);
   }
+
 }
