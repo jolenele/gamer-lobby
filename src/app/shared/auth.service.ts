@@ -22,10 +22,10 @@ export class AuthService {
       .signInWithEmailAndPassword(email, password)
       .then(res => {
         console.log('Successfully signed in!');
-        this.router.navigate(['player-list']);
+        this.router.navigate(['players-list']);
       })
       .catch(err => {
-        console.log('Something is wrong:',err.message);
+        console.log('Something is wrong:', err.message);
       });
   }
 

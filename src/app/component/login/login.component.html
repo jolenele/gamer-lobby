@@ -1,10 +1,19 @@
 <h1 *ngIf="authService.user | async">Hello {{ (authService.user | async)?.email }}</h1>
 
 <div *ngIf="!(authService.user | async)">
-    <input type="text" [(ngModel)]="email" placeholder="email">
-    <input type="password" [(ngModel)]="password" placeholder="password">
+  <!-- <script>
+    function mine(a, b){
+      var e = document.getElementById('email').value
+      var pw = document.getElementById('password').value
+      var login = document.getElementById('login')
+      login.click()
+    }
 
-    <button (click)="signIn()">Login</button>
+  </script> -->
+    <input type="text" #email required placeholder="email">
+    <input type="password" #password required placeholder="password">
+    <button (click)="signIn()" #login>Login</button>
+
 </div>
 
 <button (click)="signOut()" *ngIf="authService.user | async">Logout</button>
