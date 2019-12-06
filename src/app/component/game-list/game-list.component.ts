@@ -13,7 +13,7 @@ export class GameListComponent implements OnInit {
   GameData: any = [];
   dataSource: MatTableDataSource<Game>;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-  displayedColumns: string[] = ['title', 'genre', 'rating', 'engine', 'release', 'status'];
+  displayedColumns: string[] = ['title', 'genre', 'rating', 'platform', 'release', 'status'];
 
   constructor(private playerApi: ApiService) {
     this.playerApi.GetGames().subscribe(data => {
