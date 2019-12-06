@@ -27,10 +27,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
     signOut() {
       this.authService.SignOut();
     }
-
-    // login() {
-    //     this.authService.SignIn(this.email, this.password);
-    //     this.email = '';
-    //     this.password = '';
-    //   }
+    // signIn(email, password) {
+    //   this.email = email;
+    //   this.password = password;
+    //   this.authService.SignIn(this.email, this.password);
+    // }
 }
