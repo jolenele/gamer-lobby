@@ -1,5 +1,6 @@
 import { Component, ViewChild, HostListener, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { AuthService } from './shared/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 })
 export class AppComponent {
 
-  constructor() {}
+  constructor(public authService: AuthService) {}
 
   opened = true;
   @ViewChild('sidenav', { static: true }) sidenav: MatSidenav;

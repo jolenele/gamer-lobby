@@ -3,6 +3,7 @@ import { Player } from '../../shared/player';
 import { ApiService } from '../../shared/api.service';
 import { ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
+import { AuthService } from '../../shared/auth.service';
 
 @Component({
   selector: 'app-players-list',
@@ -20,7 +21,7 @@ export class PlayerListComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  constructor(private playerApi: ApiService) {
+  constructor(private playerApi: ApiService, public authService: AuthService) {
     this.playerApi.GetPlayers().subscribe(data => {
       this.PlayerData = data;
       this.dataSource = new MatTableDataSource<Player>(this.PlayerData);
@@ -29,6 +30,7 @@ export class PlayerListComponent implements OnInit {
       }, 0);
     });
   }
+
 
   ngOnInit() { }
 

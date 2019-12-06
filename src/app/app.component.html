@@ -3,6 +3,7 @@
     Gamer Lobby
   </div>
   <div>
+    <h2 *ngIf="authService.user | async">Hello Admin</h2>
     <button mat-raised-button color="warn" routerLink="/login">Login</button>
   </div>
 </mat-toolbar>
@@ -12,8 +13,7 @@
     <div>
       <a mat-flat-button color="accent" routerLinkActive="mat-warn" routerLink="/players-list">Player Ranking</a>
       <a mat-flat-button color="accent" routerLinkActive="mat-warn" routerLink="/games-list">List of Games</a>
-
-      <a mat-flat-button color="accent" routerLinkActive="mat-warn" routerLink="/add-player">Add Player</a>
+      <a mat-flat-button color="accent" routerLinkActive="mat-warn" routerLink="/add-player" *ngIf="authService.user | async">Add Player</a>
     </div>
 
     <router-outlet></router-outlet>

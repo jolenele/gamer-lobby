@@ -17,8 +17,8 @@ import { AuthService } from 'src/app/shared/auth.service';
     constructor(public authService: AuthService) {}
 
     signIn() {
-      this.email = 'admin@gbc.ca';
-      this.password = 'admin';
+      this.email = '';
+      this.password = '';
     }
 
     signOut() {
