@@ -14,6 +14,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material';
 import { LoginComponent } from './component/login/login.component';
 import { GameListComponent } from './component/game-list/game-list.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { GameListComponent } from './component/game-list/game-list.component';
     FormsModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
-    MatCardModule
+    MatCardModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

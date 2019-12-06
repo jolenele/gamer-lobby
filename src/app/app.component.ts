@@ -7,6 +7,9 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  constructor() {}
+
   opened = true;
   @ViewChild('sidenav', { static: true }) sidenav: MatSidenav;
   title = 'gamer-lobby';
